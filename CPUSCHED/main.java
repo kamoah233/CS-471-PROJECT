@@ -1,1 +1,1 @@
-# some comment 
+/* some comment */
