@@ -17,7 +17,7 @@ struct Process
 {
     int id;
     int arrivalTime;
-    int brustTime;
+    int burstTime;
     int priority;
     int startTime;
     int endTime;
@@ -40,7 +40,7 @@ int main()
 
         Process process;
         int id = 1;
-        while(inputFile >> process.arrivalTime >> process.brustTime >> process.priority){
+        while(inputFile >> process.arrivalTime >> process.burstTime >> process.priority){
             process.id = id;
             processes.push(process);
             id ++;
