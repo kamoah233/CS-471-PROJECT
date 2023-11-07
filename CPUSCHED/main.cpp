@@ -28,7 +28,8 @@ struct Process
 int main()
 {
     queue<Process> processes;
-    ifstream inputFile("Datafile1-txt.txt");
+    ifstream inputFile("Datafile1-txt.t");
+    //ifstream inputFile("Datafile1-txt.t" && "Datafile1-txt.xlsx");
 
     if (!inputFile){
         cerr<< "Error: Input file not found!!!";
