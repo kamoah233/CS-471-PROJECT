@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/kofiamoah/Desktop/CS471PROJECT/CPUSCHED",
-      "program": "/Users/kofiamoah/Desktop/CS471PROJECT/CPUSCHED/build/Debug/outDebug"
+      "cwd": "/Users/kofiamoah/Desktop/CS471PROJECT/PRODUCER-CONSUMER",
+      "program": "/Users/kofiamoah/Desktop/CS471PROJECT/PRODUCER-CONSUMER/build/Debug/outDebug"
     }
   ]
 }
