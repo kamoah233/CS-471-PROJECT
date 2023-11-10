@@ -28,7 +28,7 @@ struct Process
 int main()
 {
     queue<Process> processes;
-    ifstream inputFile("Datafile1-txt.t");
+    ifstream inputFile("Datafile1-txt.txt");
     //ifstream inputFile("Datafile1-txt.t" && "Datafile1-txt.xlsx");
 
     if (!inputFile){
@@ -49,7 +49,17 @@ int main()
     }
     inputFile.close();
 
+
+    //sort based on arrival time 
+    // 10 20 40 50
+    // output same for 3 cases 
+
+
+    //sort burst time
+    //10 20 40 50
+
     
+
 
 }
 
