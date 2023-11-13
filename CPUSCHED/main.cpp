@@ -5,10 +5,12 @@
 #include <chrono> // Fixed typo here
 #include <string>
 #include <queue>
+#include "fifo.h"
+//#include "Process.h"
 
 
 using namespace std;
-
+/*
 int numProducers;
 int numConsumers;
 int sleepTime;
@@ -23,7 +25,7 @@ struct Process
     int endTime;
     int remainingTime;
 };
-
+*/
 
 int main()
 {
@@ -49,6 +51,10 @@ int main()
     }
     inputFile.close();
 
+    fifo data1(processes);
+
+    data1.run();
+    data1.Calculation();
 
     //sort based on arrival time 
     // 10 20 40 50
