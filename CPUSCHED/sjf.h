@@ -12,7 +12,7 @@ class sjf{
     public:
     // Constructor takes a queue of processes as input
     sjf(const queue<Process>& processes); 
-    // Function to execute the FIFO scheduling algorithm
+    // Function to execute the SJF scheduling algorithm
     void run();
     // Function to calculate the data of the run
     void Calculation();
