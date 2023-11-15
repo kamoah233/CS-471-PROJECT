@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <fstream>
+#include <algorithm>
 #include "Process.h"
 
 using namespace std;

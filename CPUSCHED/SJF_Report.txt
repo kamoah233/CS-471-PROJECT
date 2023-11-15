@@ -1,0 +1,8 @@
+		Report for SJF CPU Scheduling:
+Number of processes: 500
+Throughput: 0.0200401
+Total elapsed time: 24950
+CPU utilization: 207.103
+Average waiting time: 10313.3
+Average turnaround time: 10334.4
+Average response time: 10313.3

@@ -6,6 +6,7 @@
 #include <string>
 #include <queue>
 #include "fifo.h"
+#include "sjf.h"
 //#include "Process.h"
 
 
@@ -55,6 +56,10 @@ int main()
 
     data1.run();
     data1.Calculation();
+
+    sjf data2(processes);
+    data2.run();
+    data2.Calculation();
 
     //sort based on arrival time 
     // 10 20 40 50
