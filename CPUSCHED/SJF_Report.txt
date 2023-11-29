@@ -1,8 +1,8 @@
 		Report for SJF CPU Scheduling:
-Number of processes: 500
-Throughput: 0.0200401
-Total elapsed time: 24950
+Number of processes : 500
+Total elapsed time: (for the scheduler) 24950
+Throughput (Number of processes executed in one unit of CPU burst time): 0.0200401
 CPU utilization: 207.103
-Average waiting time: 10313.3
-Average turnaround time: 10334.4
-Average response time: 10313.3
+Average waiting time (in CPU burst times): 10313.3
+Average turnaround time (in CPU burst times): 10334.4
+Average response time (in CPU burst times): 10313.3

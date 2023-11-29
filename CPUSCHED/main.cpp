@@ -53,11 +53,12 @@ int main()
     inputFile.close();
 
     fifo data1(processes);
-
+    cout << "FIFO list:"<<endl;
     data1.run();
     data1.Calculation();
 
     sjf data2(processes);
+    cout << "SJF list:"<<endl;
     data2.run();
     data2.Calculation();
 

@@ -10,6 +10,7 @@ fifo::fifo(const std::queue<Process>& processes)
 // Function to execute the FIFO scheduling algorithm
 void fifo::run(){
     // Loop until all processes are executed or 500 processes are executed
+
     while (!processes_.empty() && processesExecuted_ < 500) {
         Process currentProcess = processes_.front();
         processes_.pop();
@@ -43,7 +44,7 @@ void fifo::Calculation(){
     double avgWaitingTime = static_cast<double>(totalWaitingTime_) / totalProcesses;
     double avgTurnaroundTime = static_cast<double>(totalTurnaroundTime_) / totalProcesses;
     double avgResponseTime = static_cast<double>(totalResponseTime_) / totalProcesses;
-
+/*
     cout << "\t\tReport for FIFO CPU Scheduling:" << endl;
     cout << "Number of processes: " << totalProcesses << endl;
     cout << "Throughput: " << throughput << endl;
@@ -52,18 +53,19 @@ void fifo::Calculation(){
     cout << "Average waiting time: " << avgWaitingTime << endl;
     cout << "Average turnaround time: " << avgTurnaroundTime << endl;
     cout << "Average response time: " << avgResponseTime << endl;
+*/
     // Write an output file
     ofstream outfile;
     outfile.open("FIFO_Report.txt");
 
     outfile << "\t\tReport for FIFO CPU Scheduling:" << endl;
-    outfile << "Number of processes: " << totalProcesses << endl;
-    outfile << "Throughput: " << throughput << endl;
-    outfile << "Total elapsed time: " << currentTime_ << endl;
+    outfile << "Number of processes : " << totalProcesses << endl;
+    outfile << "Total elapsed time: (for the scheduler) " << currentTime_ << endl;
+    outfile << "Throughput (Number of processes executed in one unit of CPU burst time): " << throughput << endl;
     outfile << "CPU utilization: " << cpuUtilization << endl;
-    outfile << "Average waiting time: " << avgWaitingTime << endl;
-    outfile << "Average turnaround time: " << avgTurnaroundTime << endl;
-    outfile << "Average response time: " << avgResponseTime << endl;
+    outfile << "Average waiting time (in CPU burst times): " << avgWaitingTime << endl;
+    outfile << "Average turnaround time (in CPU burst times): " << avgTurnaroundTime << endl;
+    outfile << "Average response time (in CPU burst times): " << avgResponseTime << endl;
 
     outfile.close();
 }
