@@ -5,6 +5,9 @@
 #include <chrono> // Fixed typo here
 #include <string>
 #include <queue>
+#include <stack>
+#include <condition_variable>
+#include <atomic>
 
 
 using namespace std;
@@ -32,11 +35,18 @@ condition_variable is_not_empty; // condition variable for the products stack; t
 
 void produce(int producer_id){
     unique_lock<mutex> lock(m);
-    int product;
+    int product = rand();
+    while (products.size()== max_products){
+        is_not_full.wait(lock);
+    }
+
+    products.push(product);
+    is_not_empty.notify_one();
+    /* int product;
     is_not_full.wait(lock, []{return products.size()!= max_products;});
     product = products.size();
     products.push(product);
-    is_not_empty.notify_all();
+    is_not_empty.notify_all(); */
 
 
 
