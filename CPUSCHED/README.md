@@ -33,6 +33,8 @@ The program can be run in Terminal using the following command:
 ./main
 
 
+## The program can be run in Terminal using the following command:
+
 
 
 ## Output

@@ -5,21 +5,18 @@
 #include <random>
 #include "buffer.h"
 #include "producer.h"
-#include "consumer.h"
+
 #include <vector>
 #include <chrono>
-#include <thread>
-#include <iostream>
-//#include <pthread.h>
 
-using namespace std::chrono_literals;
 using namespace std;
 using namespace std::this_thread;
 
-int main(int argc, char* argv[]) {
-    int num_producers;
-    int num_consumers;
-    int buffer_size;
+int main()
+{
+    int num_producers=1;
+    int num_consumers=1;
+    int buffer_size=10;
 
     Buffer buffer (buffer_size);
     std::mutex mutex;
@@ -28,18 +25,19 @@ int main(int argc, char* argv[]) {
 
     std::vector<std::thread> producers;
     for (int i = 0; i < num_producers; i++) {
-        producers.push_back(std::thread(producer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
+        producers.emplace_back(std::thread(producer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
     } 
 
     std::vector<std::thread> consumers;
     for (int i = 0; i < num_consumers; i++) {
-        consumers.push_back(std::thread(consumer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
+        consumers.emplace_back(std::thread(consumer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
     }
 
-    for (auto& thread : producers) {
-        thread.join();
+    for (auto& producer_thread : producers) {
+        producer_thread.join();
     }
-    for (auto& thread : consumers) {
-        thread.join();
+    for (auto& consumer_thread : consumers) {
+        consumer_thread.join();
     }
+
 }
