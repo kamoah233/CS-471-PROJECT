@@ -59,7 +59,12 @@ Average response time (in CPU burst times):
 
 
 ## Result's summary and explanation
+From the results obtained, we can see that with the exception of the SJF scheduling algorithm, the rest of the CPU scheduling algorithms have identical throughput, average waiting times, average turnaround times, and average response times. The SJF algorithm leads in most of the statistical categories such as as average waiting time, average turn around time and average response time. It can be inferred that the throughput and CPU utilization are similar for the rest of the scheduling algorithms because of the throughput formula used below.
 
+
+Throughput = total number of processes/total elapsed time
+
+CPU utilization = total burst time/total time elapsed time
 
 
 
