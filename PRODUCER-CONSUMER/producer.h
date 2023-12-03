@@ -7,6 +7,8 @@
 /* void producer(Buffer& buffer, std::mutex& mutex, std::condition_variable& buffer_not_empty, 
 std::condition_variable& buffer_not_full); */
 
-void producer(Buffer& buffer, std::mutex& mutex, std::condition_variable& buffer_not_empty, std::condition_variable& buffer_not_full);
+//void producer(Buffer& buffer, std::mutex& mutex, std::condition_variable& buffer_not_empty, std::condition_variable& buffer_not_full);
 
+void producer(Buffer& buffer, std::mutex& mutex, std::condition_variable& buffer_not_empty, std::condition_variable& buffer_not_full);
+void consumer(Buffer& buffer, std::mutex& mutex, std::condition_variable& buffer_not_empty, std::condition_variable& buffer_not_full);
 #endif
