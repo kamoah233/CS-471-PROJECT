@@ -20,15 +20,18 @@ The program takes an input text file titled : Datafile1-txt.txt
 
 Starting from the source code, the program can be compiled 
 
+Must direct to folder CPUSCHED, then
+
+The program can be compile in Terminal using the following command:
+g++ -o main  main.cpp fifo.cpp sjf.cpp priority.cpp
+
 
 ## Running the program
 
 The program can be run in Terminal using the following command:
 
-g++ -o main  main.cpp fifo.cpp sjf.cpp priority.cpp
+./main
 
-
-## The program can be run in Terminal using the folLowing command:
 
 
 
@@ -55,6 +58,7 @@ Average response time (in CPU burst times):
 
 ## Result's summary and explanation
 
+The program read the text input file then calculate all the information of each type scheduling (FIFO, SJF, )
 
 Throughput = total number of processes/total elapsed time
 

@@ -2,7 +2,7 @@
 
 ## Authors
 Kofi Amoah
-Pham Truong
+Truong Pham
 
 ## Description
 
