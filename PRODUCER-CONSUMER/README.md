@@ -11,7 +11,7 @@ file which lists a number of arguments and outputs those arguments along with th
 complete these executions.
 
 ## Input files
-
+The program takes the input files titled  : Input-with-4s-Wait.txt, Input-with-6s-Wait.txt, and Input-with-8s-Wait.txt
 
 ## Compiling the program
 
