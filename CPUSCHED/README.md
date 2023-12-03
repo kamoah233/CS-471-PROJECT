@@ -28,7 +28,7 @@ The program can be run in Terminal using the following command:
 g++ -o main  main.cpp fifo.cpp sjf.cpp priority.cpp
 
 
-## The program can be run in Terminal using the folLowing command:
+## The program can be run in Terminal using the following command:
 
 
 
