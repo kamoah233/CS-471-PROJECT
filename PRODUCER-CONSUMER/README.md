@@ -18,7 +18,7 @@ The program takes the input files titled  : Input-with-4s-Wait.txt, Input-with-6
 Starting from the source code, the program can be compiled using the following command:
 
 
-
+<!-- 
 ## Running the program
 
 The program can be run in Terminal using the following command:
@@ -27,7 +27,7 @@ For example, using the provided input files, the program can be run as follows:
 
 
 
-## The output
+## The output -->
 
 
 
