@@ -5,7 +5,7 @@
 typedef int Item;
 class Buffer {
     public:
-        explicit Buffer(int cpacity);
+        explicit Buffer(int capacity);
         bool isempty() const;
         bool isfull() const;
         void insert(const Item& item);
