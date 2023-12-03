@@ -1,72 +1,45 @@
-#include <iostream> 
-#include <fstream>
-#include <mutex>
+#include <iostream>
 #include <thread>
-#include <chrono> // Fixed typo here
-#include <string>
-#include <queue>
-#include <stack>
+#include <mutex>
 #include <condition_variable>
-#include <atomic>
+#include <random>
+#include "buffer.h"
+#include "producer.h"
+#include "consumer.h"
+#include <vector>
+#include <chrono>
+#include <thread>
+#include <iostream>
+//#include <pthread.h>
 
-
+using namespace std::chrono_literals;
 using namespace std;
+using namespace std::this_thread;
 
-int numProducers;
-int numConsumers;
-int sleepTime;
+int main(int argc, char* argv[]) {
+    int num_producers;
+    int num_consumers;
+    int buffer_size;
 
-const int consumer_max_wait_time = 200; // in ms - max time that a consumer can wait for a product to be consumed
-const int max_production = 16;  // when producers has produced this quantity they will stop to produce
-const int max_products = 16;  //maximum number of products that can be stored
+    Buffer buffer (buffer_size);
+    std::mutex mutex;
+    std::condition_variable buffer_not_empty;
+    std::condition_variable buffer_not_full;
 
-atomic<int> num_producers_working(0); // when there's no number of producers working the program will stop; the consumer stop as well
+    std::vector<std::thread> producers;
+    for (int i = 0; i < num_producers; i++) {
+        producers.push_back(std::thread(producer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
+    } 
 
-stack<int> products; // The products stack, where we will store our products
-mutex m; // mutex for the products stack
-
-condition_variable is_not_full; // condition variable for the products stack; to indicate that our stack is not full between the thread operations 
-condition_variable is_not_empty; // condition variable for the products stack; to indicate that our stack is not empty between the thread operations        
-
-/**
- * Produce function
- * @param producer_id
-*/
-
-void produce(int producer_id){
-    unique_lock<mutex> lock(m);
-    int product = rand();
-    while (products.size()== max_products){
-        is_not_full.wait(lock);
+    std::vector<std::thread> consumers;
+    for (int i = 0; i < num_consumers; i++) {
+        consumers.push_back(std::thread(consumer, std::ref(buffer), std::ref(mutex), std::ref(buffer_not_empty), std::ref(buffer_not_full)));
     }
 
-    products.push(product);
-    is_not_empty.notify_one();
-    /* int product;
-    is_not_full.wait(lock, []{return products.size()!= max_products;});
-    product = products.size();
-    products.push(product);
-    is_not_empty.notify_all(); */
-
-
-
-}
-
-/**
- * Consume
- * @param consumer_id
-*/
-
-void consume(int consumer_id){
-    unique_lock<mutex> lock(m);
-    int product;
-
-    if(is_not_empty.wait_for(lock, chrono::milliseconds(consumer_max_wait_time),
-    []{return products.size()> 0;})){
-        product = products.top();
-        products.pop();
-        is_not_full.notify_all();
+    for (auto& thread : producers) {
+        thread.join();
+    }
+    for (auto& thread : consumers) {
+        thread.join();
     }
 }
-
-
