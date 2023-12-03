@@ -9,6 +9,7 @@ Truong Pham
 This program is a development of the producer-consumer problem using Pthreads and written in C++. It takes an input 
 file which lists a number of arguments and outputs those arguments along with the turnaround time which was needed to
 complete these executions.
+It is implemented using a bounded buffer using a circular queue
 
 ## Input files
 The program takes the input files titled  : Input-with-4s-Wait.txt, Input-with-6s-Wait.txt, and Input-with-8s-Wait.txt
