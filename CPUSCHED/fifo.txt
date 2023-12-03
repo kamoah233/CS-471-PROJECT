@@ -1,8 +1,0 @@
-		Report for FIFO CPU Scheduling:
-Number of processes: 500
-Throughput: 0.0339121
-Total elapsed time: 14744
-CPU utilization: 1.32257
-Average waiting time: 17.884
-Average turnaround time: 39
-Average response time: 17.884

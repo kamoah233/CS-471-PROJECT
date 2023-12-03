@@ -8,6 +8,7 @@ int priority;*/
 #include <queue>
 #include <fstream>
 #include <algorithm>
+#include <functional>
 #include "Process.h"
 
 using namespace std;

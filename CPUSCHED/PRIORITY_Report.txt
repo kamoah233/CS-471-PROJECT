@@ -1,0 +1,8 @@
+		Report for PRIORITY CPU Scheduling:
+Number of processes : 500
+Total elapsed time: (for the scheduler) 14744
+Throughput (Number of processes executed in one unit of CPU burst time): 0.0339121
+CPU utilization: 1.30765
+Average waiting time (in CPU burst times): 17.444
+Average turnaround time (in CPU burst times): 38.56
+Average response time (in CPU burst times): 17.444

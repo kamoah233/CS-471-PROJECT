@@ -44,16 +44,7 @@ void fifo::Calculation(){
     double avgWaitingTime = static_cast<double>(totalWaitingTime_) / totalProcesses;
     double avgTurnaroundTime = static_cast<double>(totalTurnaroundTime_) / totalProcesses;
     double avgResponseTime = static_cast<double>(totalResponseTime_) / totalProcesses;
-/*
-    cout << "\t\tReport for FIFO CPU Scheduling:" << endl;
-    cout << "Number of processes: " << totalProcesses << endl;
-    cout << "Throughput: " << throughput << endl;
-    cout << "Total elapsed time: " << currentTime_ << endl;
-    cout << "CPU utilization: " << cpuUtilization << endl;
-    cout << "Average waiting time: " << avgWaitingTime << endl;
-    cout << "Average turnaround time: " << avgTurnaroundTime << endl;
-    cout << "Average response time: " << avgResponseTime << endl;
-*/
+
     // Write an output file
     ofstream outfile;
     outfile.open("FIFO_Report.txt");

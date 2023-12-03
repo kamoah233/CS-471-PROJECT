@@ -7,7 +7,7 @@
 #include <queue>
 #include "fifo.h"
 #include "sjf.h"
-//#include "Process.h"
+#include "priority.h"
 
 
 using namespace std;
@@ -62,13 +62,10 @@ int main()
     data2.run();
     data2.Calculation();
 
-    //sort based on arrival time 
-    // 10 20 40 50
-    // output same for 3 cases 
-
-
-    //sort burst time
-    //10 20 40 50
+    priority data3(processes);
+    cout << "Priority list:"<<endl;
+    data3.run();
+    data3.Calculation();
 
     
 
