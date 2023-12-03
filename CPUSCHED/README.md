@@ -58,10 +58,6 @@ Average response time (in CPU burst times):
 
 ## Result's summary and explanation
 
-The program read the text input file then calculate all the information of each type scheduling (FIFO, SJF, )
 
-Throughput = total number of processes/total elapsed time
-
-CPU utilization = total burst time/total time elapsed time
 
 
